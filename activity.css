@@ -1,0 +1,173 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4A148C;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: #4A148C;
+  margin-bottom: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.custom-select-container {
+  position: relative;
+  width: 250px;
+}
+
+.custom-select-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #BA68C8;
+  border-radius: 5px;
+  outline: none;
+  background: #fff;
+}
+
+.custom-select-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+}
+
+.custom-select-dropdown.active {
+  display: block;
+}
+
+.custom-select-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.custom-select-dropdown div:hover {
+  background: #f0f0f0;
+}
+
+.date-row {
+  display: flex;
+  gap: 10px;
+}
+
+.date-row input[type="date"] {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #BA68C8;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #7B1FA2;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #6A1B9A;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #E1BEE7;
+  color: #4A148C;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.yellow {
+  color: #F9A825;
+  font-weight: bold;
+}
+
+.empty {
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .custom-select-container {
+    width: 100%;
+  }
+
+  .date-row {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .date-row input[type="date"] {
+    width: 48%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+}
