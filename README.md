@@ -263,6 +263,130 @@ Password: pratik
 > 📌 These credentials are intended only for local testing and development.
 > Change default credentials before deploying in a production environment.
 
+
+## Database Structure
+
+### contractor
+Stores contractor account information and login credentials.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| name | VARCHAR | Contractor Name |
+| mobile | VARCHAR | Login Mobile Number |
+| password | VARCHAR | Encrypted Password |
+| photo | VARCHAR | Profile Photo |
+
+---
+
+### labours
+Stores labour/worker details linked to contractors.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| contractor_id | INT | Linked Contractor ID |
+| name | VARCHAR | Labour Name |
+| mobile | VARCHAR | Labour Mobile Number |
+
+---
+
+### attendance
+Stores daily attendance records for workers.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| labour_id | INT | Labour ID |
+| date | DATE | Attendance Date |
+| status | VARCHAR | full / half |
+| custom_amount | DECIMAL | Custom Wage |
+| group_id | INT | Group Reference |
+| contractor_id | INT | Contractor ID |
+| confirmed_at | TIMESTAMP | Attendance Confirmation Time |
+| type | VARCHAR | Attendance Type |
+| attendance_type | VARCHAR | Attendance Category |
+| is_removed | TINYINT | Soft Delete Flag |
+| bonus | DECIMAL | Extra Bonus |
+
+---
+
+### payments
+Stores salary and payment history of workers.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| labour_id | INT | Labour ID |
+| total_amount | DECIMAL | Total Salary |
+| payed_amount | DECIMAL | Paid Amount |
+| remaining_amount | DECIMAL | Pending Amount |
+| from_date | DATE | Salary Start Date |
+| to_date | DATE | Salary End Date |
+| created_at | TIMESTAMP | Payment Entry Time |
+| note | TEXT | Payment Notes |
+
+---
+
+### bonus
+Stores bonus records for workers.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| labour_id | INT | Labour ID |
+| contractor_id | INT | Contractor ID |
+| amount | DECIMAL | Bonus Amount |
+| date | DATE | Bonus Date |
+
+---
+
+### labour_groups
+Stores labour grouping information.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| contractor_id | INT | Contractor ID |
+| group_name | VARCHAR | Labour Group Name |
+
+---
+
+### labour_group_members
+Stores mapping between labour and groups.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| labour_id | INT | Labour ID |
+| group_id | INT | Group ID |
+
+---
+
+### attendance_groups
+Stores grouped attendance records.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| contractor_id | INT | Contractor ID |
+| group_name | VARCHAR | Attendance Group Name |
+
+---
+
+### attendance_temp
+Temporary attendance storage table.
+
+| Column | Type | Description |
+|---|---|---|
+| id | INT | Primary Key |
+| labour_id | INT | Labour ID |
+| contractor_id | INT | Contractor ID |
+| status | VARCHAR | Attendance Status |
+| created_at | TIMESTAMP | Temporary Entry Time |
+
+
+
 # 💎 System Highlights
 
 - Lightweight & Fast
