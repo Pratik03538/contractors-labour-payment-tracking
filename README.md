@@ -100,20 +100,20 @@ Interactive dashboard with:
 ## 🖥️ Main Dashboard
 
 <p align="center">
-  <img src="images/dashboard-preview.png" width="950"/>
+ <img width="401" height="812" alt="001" src="https://github.com/user-attachments/assets/593397f8-cc38-440e-a7f2-3a1111cf809a" />
+
 </p>
 
-> 📌 Add your dashboard screenshot here
 
 ---
 
 ## 📊 Labour Payment & Attendance Panel
 
 <p align="center">
-  <img src="images/payment-preview.png" width="950"/>
+  <img width="407" height="805" alt="003" src="https://github.com/user-attachments/assets/d12ad4c3-89fc-4a97-823c-20bf1ebfc33f" />
+
 </p>
 
-> 📌 Add your payment/attendance screenshot here
 
 ---
 
