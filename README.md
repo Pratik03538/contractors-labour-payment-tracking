@@ -256,7 +256,7 @@ http://localhost/contractors-labour-payment-tracking
 For testing and demo purposes, use the following login credentials:
 
 ```text
-Username: pratik
+Mobile NO : 1111111111
 Password: pratik
 ```
 
